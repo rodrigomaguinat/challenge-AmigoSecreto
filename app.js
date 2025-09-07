@@ -11,10 +11,23 @@ function agregarAmigo(){
         amigos.push(element);
     }
     limpiarCampo();
-    //console.log(amigos);
+    mostrarAmigos()
+    console.log(amigos);
 }
 
 function limpiarCampo() {
   const campo = document.getElementById('amigo');
   campo.value = ''; // Limpia el campo de texto
+}
+
+
+function mostrarAmigos() {
+    const lista = document.getElementById("listaAmigos");
+      
+    // Limpiar la lista antes de agregar nuevos elementos
+    lista.innerHTML = '';
+
+    amigos.forEach(amigo => {
+    lista.innerHTML += `<li>${amigo}</li>`;
+    });
 }
